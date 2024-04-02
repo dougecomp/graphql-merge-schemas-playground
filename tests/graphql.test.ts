@@ -26,14 +26,14 @@ describe('GraphQL Merge Schemas', () => {
   })
 
   it('should hit removeUser from manual schema generation', async () => {
-    const removeRecipeQuery = `
+    const removeUserQuery = `
       mutation {
         removeUser(id: "1")
       }
     `
     const res = await request(app)
     .post('/graphql')
-    .send({query: removeRecipeQuery})
+    .send({query: removeUserQuery})
 
     expect(res.body.data.removeUser).toBeDefined()
   })
